@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>단기 취업률 제고 방안 기획 보고서</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap">
+<style>
+:root{--bg:#f1f2f4;--card:#fff;--ink:#1d2127;--sub:#5b6270;--line:#d9dce1;--bar:#c3c2b7;--acc:#2a78d6;--accbg:#e6f0fc;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15181c;--card:#1e2227;--ink:#eceef1;--sub:#9aa2af;--line:#323841;--bar:#5d6068;--acc:#5b9bec;--accbg:#1b2a3f}}
+:root[data-theme="dark"]{--bg:#15181c;--card:#1e2227;--ink:#eceef1;--sub:#9aa2af;--line:#323841;--bar:#5d6068;--acc:#5b9bec;--accbg:#1b2a3f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 "IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+main{max-width:980px;margin:0 auto;padding:28px 16px 56px}
+h1{font-size:clamp(26px,5vw,38px);line-height:1.25;margin:6px 0 10px;letter-spacing:-.02em}
+h2{font-size:21px;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink)}
+h3{font-size:15px;margin:0 0 8px}
+p{margin:0 0 8px}
+.meta{color:var(--sub);font-size:13px}
+.lead{max-width:70ch;font-size:16px}
+section{margin-top:34px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:18px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.hero{display:grid;gap:18px;grid-template-columns:auto 1fr;align-items:center}
+@media(max-width:640px){.hero{grid-template-columns:1fr}}
+.big{font-size:clamp(56px,12vw,92px);font-weight:700;line-height:1;color:var(--acc);letter-spacing:-.03em}
+.big small{font-size:.38em;margin-left:2px}
+.chip{display:inline-block;background:var(--accbg);color:var(--acc);font-weight:700;padding:2px 10px;border-radius:99px;font-size:13px}
+.src{font-size:12px;color:var(--sub);margin:0 0 10px}
+.bars{display:grid;gap:6px;margin:10px 0}
+.row{display:grid;grid-template-columns:118px 1fr 128px;gap:10px;align-items:center;font-size:13px}
+.row.w{grid-template-columns:70px 1fr 110px}
+@media(max-width:560px){.row,.row.w{grid-template-columns:92px 1fr;}.row b{grid-column:2;font-weight:400;color:var(--sub)}}
+.track{position:relative;height:20px;background:transparent;border-left:1px solid var(--sub)}
+.fill{height:100%;background:var(--bar)}
+.fill.a{background:var(--acc)}
+.mark{position:absolute;top:-4px;bottom:-4px;border-left:2px dashed var(--sub)}
+.mark i{position:absolute;top:-17px;left:-14px;font-size:11px;font-style:normal;color:var(--sub);white-space:nowrap}
+.bars.m{margin-top:24px}
+.stack{display:flex;height:34px;margin:22px 0 6px}
+.stack div{display:flex;align-items:center;padding-left:10px;font-size:13px;font-weight:500}
+.sc{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:480px;font-size:14px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--bg);font-weight:700;white-space:nowrap}
+.note{border-left:3px solid var(--acc);background:var(--accbg);padding:10px 14px;margin:12px 0 0;font-size:14px}
+ul{margin:0;padding-left:18px}li{margin-bottom:4px}
+.kv{display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:12px 0}
+.kv div{border:1px solid var(--line);border-radius:6px;padding:10px 12px;background:var(--card)}
+.kv b{display:block;font-size:20px}
+.kv span{font-size:12px;color:var(--sub)}
+.dec{color:var(--sub);white-space:nowrap}
+footer{margin-top:34px;font-size:12px;color:var(--sub)}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <div class="meta">2026.10.12 / 내부 최종 컨펌용 / KDT 취업률 관리</div>
+  <h1>단기 취업률 제고 방안 기획 보고서</h1>
+  <p class="lead">현재 취업률 52.98%(26.10). 연말까지 최소 목표 60% 도달에 67명 추가 필요.</p>
+  <p class="lead">제외 증빙 확보와 AX 창업 프로그램으로 얼마나 채울 수 있는지, 이번에 정할 사항 정리함.</p>
+  <div class="card hero" style="margin-top:16px">
+    <div class="big">52.98<small>%</small></div>
+    <div>
+      <p><span class="chip">산정대상 955명 중 506명 취업</span></p>
+      <p>최소 방어선 60%까지 <b>+67명</b> 필요</p>
+      <div class="bars m" id="hero"></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <h2>1. 요약</h2>
+  <div class="grid">
+    <div class="card"><h3>현재 취업률</h3><p>산정대상 955명 중 506명 취업, 52.98%. 2026년 9월 52.56%에서 상승, 2025년 최종 45.15%보다 높음.</p></div>
+    <div class="card"><h3>2026 KPI</h3><p>최소 방어선 60%까지 +67명 필요. 65%는 +115명, 70%는 +163명. 분모가 늘면 필요 인원도 증가.</p>
+      <div class="kv"><div><b>+67명</b><span>60%</span></div><div><b>+115명</b><span>65%</span></div><div><b>+163명</b><span>70%</span></div></div></div>
+    <div class="card"><h3>채용 경로의 한계</h3><p>강남고용센터 행사에서 UX/UI 희망자는 많았으나 참여 기업 직무는 AI 개발 중심. 채용시까지 시간이 너무 많이 소요됨. 다만 AX교육에 대한 만족도와 필요도는 상승 중. 이번엔 AX교육+취업이 아닌, AX 교육+ 창업이라는 단기간내에 취업률 제고가 가능한 (사업자등록증 확보) 방안과, 취업률 산정 제외 방안을 함께 사용.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>2. 현황 진단 (26.10월 초 기준)</h2>
+  <p>전체는 목표에 근접하나 UXUI와 AI Lab 일부 과정이 크게 낮음. 제외 신청과 사업자 반영에서 놓치는 인원 존재.</p>
+
+  <div class="card" style="margin-top:12px">
+    <h3>2026년 취업률 상승했으나 최소 방어선 60%에는 못 미침</h3>
+    <p class="src">산정대상 대비 취업 인원 비율</p>
+    <div class="bars m" id="c1"></div>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <h3>UXUI 13·14회차 취업률, 목표 60% 대비 26~34%p 부족</h3>
+    <p class="src">첨부 이미지(KDT/집체 운영 과정 이탈률 현황) /11개 과정 /취업산정 마감 2026-10-09~12-27 · 11개 과정 합계 196명 중 83명 취업 · 42.3%</p>
+    <div class="bars m" id="c2"></div>
+    <p class="src">파란색은 UXUI 과정, 점선은 목표 취업률 60%.</p>
+  </div>
+
+  <div class="grid" style="margin-top:14px">
+    <div class="card">
+      <h3>취업률 산정 제외 대상 통계</h3>
+      <p style="margin:10px 0 4px"><b>제외 사유</b></p><div class="kv"><div><b>108명</b><span>재학 (97.3%)</span></div><div><b>2명</b><span>질병 (1.8%)</span></div><div><b>1명</b><span>해외 이민 (0.9%)</span></div></div>
+      <p class="src">첨부 PDF(제외 대상자 정리) /2025~2026 취업률 대상자 /09.29 기준</p>
+      <div class="bars" id="c3" style="margin-top:6px"></div>
+      <p class="src">미신청: 시스템상 고용보험 가입이 확인되어 제외 신청을 진행하지 않은 인원.<br>승인 반려: 졸업일이 수료일보다 이전이거나 관할이 아닌 고용센터로 신고한 경우.</p>
+      <p>제외 신청 반려는 졸업일이 수료일보다 이전이거나 관할이 아닌 고용센터로 신고한 경우. 안내 보완 시 감소 가능.</p>
+      <p>사업자등록증+취업률 반영 14건. (이 중 사업자등록증 확보 및 직접 등록은 1건)</p>
+      
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>3. 단기 제고 목표</h2>
+  <div class="card sc"><table>
+    <tr><th>단계</th><th>목표</th><th>추가 필요 인원</th><th>의미</th></tr>
+    <tr><td>최소 방어선 (현실적인 목표)</td><td><b>60%</b></td><td><b>+67명</b></td><td>우선 확보할 최소 목표</td></tr>
+  </table></div>
+  <p class="src" style="margin-top:8px">첨부 자료 기반 계산 /분모 955명 고정, 각 수단이 최대로 성공한다고 가정한 상한</p>
+  <h3 style="margin-top:16px">병행 과제: 사업개발파트 3대 집중과제.</h3>
+  <div class="grid">
+    <div class="card"><h3>집중대상 전원 컨택</h3><p>약 140명의 취업 상태와 의사 재확인, 미응답자는 리워드 검토.</p></div>
+    <div class="card"><h3>인턴십 추가 개설</h3><p>55개사 70명 취업 실적이 있는 기업 연계형 인턴십 확대.</p></div>
+    <div class="card"><h3>상시 채용처 확보</h3><p>신규 취업개발 BDM 중심으로 기업 발굴, 전사 네트워크와 연계.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>4. 제외대상자 증빙자료 확보 방안</h2>
+  <div class="card">
+    <h3>운영 개요</h3>
+    <div class="kv">
+      
+      <div><b>5만원권</b><span>리워드 형태: 네이버페이 (사용성이 좋아 선택)</span></div>
+      
+    </div>
+    <ul style="margin:10px 0"><li>26년도 산정 대상자 중 취합된 제외 대상자는 약 7.18% 수준으로 취합 되었음</li><li>2025년 약 6.88% 취합, 26년도 취합된 제외 대상자는 그 중 약 40퍼센트가 취업으로 인해 미신청으로 변경됨(25년도는 10퍼센트만 변경), 약 18% 승인 반려.</li><li>남은 산정 대상자 중 미취업 인원들을 25년도 연령대별 제외율을 기준으로 단순 계산하면 10.63명, 반올림하면 11명 수준 예상.</li><li>결론 10명~20명 내외. 최대 예산 약 100만원 미만</li></ul>
+    <ul>
+      <li><b>취지:</b> 증빙 서류와 설문 회신 부담을 낮춰 제외 및 취업 증빙 빠르게 확보</li>
+      
+    </ul>
+  </div>
+  <div class="card sc" style="margin-top:14px"><table>
+    <tr><th>제외 유형</th><th>제출 증빙</th><th>리워드(안)</th></tr>
+    <tr><td>재학(대학원/편입 등)</td><td>재학증명서, 논문/연구 자료</td><td>논문 지원비, 학업 장려금</td></tr>
+    <tr><td>질병</td><td>진단서/소견서(최소 수집)</td><td>웰니스 쿠폰, 질병 위로금</td></tr>
+    <tr><td>해외 이민/유학</td><td>비자, 입학허가서, 출국 증빙</td><td>글로벌 응원/도약 축하금</td></tr>
+    <tr><td>임신/출산</td><td>임신확인서</td><td>임신 축하금</td></tr>
+    <tr><td>입대</td><td>입영통지서</td><td>장병 지원금</td></tr>
+    <tr><td>추가 과정 등록</td><td>수강 확정 증빙</td><td>추가 과정 수강료 할인(제안)</td></tr>
+  </table></div>
+  <div class="note">현재 통계에는 재학/질병/해외 이민 3개 유형만 존재. 나머지 유형은 새로 정리한 제안.</div>
+</section>
+
+<section>
+  <h2>5. AX 창업 프로그램과 사업자등록 일정/방향</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>사업자 추가 지원 프로그램</h3>
+      <p>창업한 수료생의 사업자등록증 확보: 사업자등록증과 사업 방향을 공유한 수료생에게 아래 혜택 제공</p>
+      <ul>
+        <li>회사가 첫 고객이 되는 협업 기회</li>
+        <li>박지웅 의장님 벤처투자사 심의를 거친 창업 지원</li>
+        <li>박지웅 의장님 창업 코멘트</li>
+        <li>신규 직원 학습용 패스트캠퍼스 강의 지원</li>
+        <li>채용 필요시 패스트러너 홍보</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>파일럿</h3>
+      <p>UXUI 14회차 미취업 수료생 대상으로 먼저 여는 파일럿. 성과 확인 후 다른 과정으로 확대 여부 결정.</p>
+      <ul>
+        <li>최대 3일 과정 × 2회, 회차당 30명 (변동 가능)</li>
+        <li>총 예산: 약 2천만원 (파일럿 후 12월 2회차까지 운영시)</li>
+      </ul>
+      <div class="bars" id="bud" style="margin-top:12px"></div>
+    </div>
+  </div>
+  <div class="card sc" style="margin-top:14px"><table>
+    <tr><th>항목</th><th>내용</th></tr>
+    <tr><td>대상</td><td>UXUI 디자인 부트캠프 13, 14회차 미취업 수료생 중 약 30명</td></tr>
+    <tr><td>일정/장소</td><td>2026년 11월 초 시작 목표, 미왕빌딩 오프라인</td></tr>
+    <tr><td>KPI</td><td><b>20명 이상 사업자등록증 생성</b> / 12월 2회차 직군 확대 오픈 후 총 목표 인원 (KPI) 50명</td></tr>
+    <tr><td>핵심 지표</td><td>참여/수료 인원 / 사업자등록 완료 인원 / 실제 사업 개시 및 취/창업 인정 인원</td></tr>
+    <tr><td>참가자 가치</td><td>AI 활용 실무 경험, 개인 사업 실행 경험, 취업에 쓸 포트폴리오</td></tr>
+    <tr><td>사업자등록 비용</td><td>등록 자체는 별도 수수료 없음. 온라인 판매/식품/건강기능식품/직업소개 등 일부 업종은 별도 신고/인허가와 비용이 들 수 있어 아이템 확정 후 먼저 확인</td></tr>
+  </table></div>
+  <div class="note">사업자등록은 실제 사업 영위가 전제여서 형식적 등록은 점검 시 환수 위험 있음. 실제 사업 개시 의사가 있는 참가자 중심으로 운영, 기준 확정 전까지 리워드 지급과 모집 안내 보류.</div>
+</section>
+
+<section>
+  <h2>6. 리워드/예산 근거</h2>
+  <div class="grid">
+    <div class="card"><h3>리워드 5만원의 기준</h3><p>리워드 5만원은 채용행사 때 지급한 3만원보다 높고, SOS 클리닉 멘토링 1회 단가와 같은 수준. 서류 준비가 번거로운 유형에서도 회신 가능한 금액.</p></div>
+    <div class="card"><h3>반영 효과</h3>
+      <div class="kv"><div><b>+0.11%p</b><span>취업자 1명 반영 시</span></div><div><b>+0.06%p</b><span>제외 대상자 1명 반영 시</span></div></div></div>
+    <div class="card"><h3>기존 취업 1인당 비용 (실제 집행 기준)</h3>
+      <div class="kv"><div><b>약 170~230만원</b><span>취업 1명당 평균</span></div></div><p style="margin:8px 0 0">취업률 산정 제외 대상자 + AX창업교육 = 총 약 3천만원으로 KPI 약 60명 취업자 발생시 취업 1명당 평균 약 50만원</p></div>
+  </div>
+  <h3 style="margin-top:18px">컨펌 필요 안건</h3>
+  <div class="card sc"><table>
+    <tr><th>안건</th><th>결정할 내용</th><th>결정</th></tr>
+    <tr><td>유형별 리워드와 예산</td><td>6개 유형의 리워드안과 총 예산 최대 100만원</td><td class="dec">승인 / 보완 / 반려</td></tr>
+    <tr><td>AX 창업 프로그램 파일럿</td><td>UXUI 14회차, 11월, 약 30명, 12월 30명 포함 총 예산 약 2천만원</td><td class="dec">승인 / 보완 / 반려</td></tr>
+    <tr><td>의장님 연계 혜택</td><td>첫 고객 협업, 벤처투자사 심의 연계 창업 지원, 창업 코멘트</td><td class="dec">승인 / 보완 / 반려</td></tr>
+    <tr><td>집중 관리와 병행 과제</td><td>마감일 순서 점검, 전원 컨택/인턴십/상시 채용처 과제와 연계</td><td class="dec">승인 / 보완 / 반려</td></tr>
+  </table></div>
+</section>
+
+<footer>
+  <div class="card" style="margin-top:12px;font-size:13px;color:var(--ink)">
+    <b>Ref.</b>
+    <p style="margin:6px 0 0">강남 | 취업 지원 잔여 예산: SOS(248,635,000) + 인턴십(156,729,600) = 405,364,600원</p>
+    <ul style="margin-top:4px">
+      <li>2027년도 예산 신규 결재 or 기존 예산 이월에 따라 지점 할당 금액 영향</li>
+      <li>멘토링 집행 금액 (40,965,000원-인턴십용 멘토링 포함), 인턴십 집행 금액 (148,975,400원)/26.9월까지</li>
+    </ul>
+  </div>
+</footer>
+</main>
+<script>
+function bars(id,rows,mark,ml,cls){
+  var el=document.getElementById(id);if(!el)return;
+  el.innerHTML=rows.map(function(r){
+    var m=mark?'<span class="mark" style="left:'+mark+'%"><i>'+ml+'</i></span>':'';
+    return '<div class="row'+(cls||'')+'"><span>'+r[0]+'</span><div class="track">'+m+'<div class="fill'+(r[3]?' a':'')+'" style="width:'+r[1]+'%"></div></div><b style="font-weight:500">'+r[2]+'</b></div>';
+  }).join('');
+}
+bars('hero',[['2026 현재',52.98,'506/955명',1]],60,'최소 60%');
+bars('c1',[['2025 최종',45.14,'45.14% (283/627명)'],['2026년 9월',52.56,'52.56% (503/957명)'],['2026 현재',52.98,'52.98% (506/955명)',1],['관리 중 11개 과정',42.35,'42.35% (83/196명)']],60,'최소 60%');
+bars('c2',[['UXUI 13회차',26.3,'26.3% (5/19명)',1],['AI Lab 17회차',30,'30.0% (3/10명)'],['UXUI 14회차',34.1,'34.1% (15/44명)',1],['로보틱스 심화 6회차',37.5,'37.5% (3/8명)'],['AI Lab 15회차',40,'40.0% (6/15명)'],['AI 심화 6회차',40,'40.0% (6/15명)'],['AI Lab 21회차',41.2,'41.2% (7/17명)'],['AI Lab 16회차',50,'50.0% (4/8명)'],['AI Lab 18회차',50,'50.0% (4/8명)'],['데이터 분석 18회차',55.3,'55.3% (21/38명)'],['UXUI 12회차',64.3,'64.3% (9/14명)',1]],60,'목표 60%');
+bars('c3',[['승인',56.8,'63건 (56.8%)'],['미신청',27.9,'31건 (27.9%)'],['승인 반려',12.6,'14건 (12.6%)',1],['신청 대기',2.7,'3건 (2.7%)']],0,'','');
+bars('bud',[['강사 섭외비',48,'960만원'],['AI계정 지원비',15,'300만원'],['첫 사업자등록 리워드',30,'600만원',1],['예비비',7,'140만원']],0,'');
+</script>
+</body>
+</html>
